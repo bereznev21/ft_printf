@@ -27,10 +27,11 @@ typedef struct	var
 
 typedef struct	float_struct
 {
-	float					num;
-	float					mantisa;
+	long double				num;
+	long double				mantisa;
 	long					sign;
 	int						mantisa_len;
+	int						zero_len;
 	int						base;
 	int						power;
 	char					*res;
@@ -42,7 +43,7 @@ char	*ft_print_s(var *s);
 char	*ft_print_p(var *s);
 char	*ft_print_pc(var *s);
 char	*ft_llitoa(long long int n, var *tmp);
-char	*ft_ullitoa(long long int nb, var *tmp);
+char	*ft_ullitoa(uintmax_t nb, var *tmp);
 char	*ft_print_d(var *s);
 char	*ft_print_o(var *s);
 char	*ft_print_u(var *s);
@@ -54,7 +55,9 @@ int		ft_create_list_var(const char *mas, int i, va_list str);
 char	*ft_create_arg_string(char *str1, var *tmp, va_list str);
 int		ft_check_type(char type);
 char	*ft_strjoin_char(char *str, char end);
-char	*ft_start_double(long double n, int precision);
+char	*ft_strjoin_left(const char *s1, char *s2);
+char	*ft_strjoin_right(char *s1, const char *s2);
+char	*ft_start_double(long double n, var *var_struct);
 char	*ft_fil_whitespaces(var *s, int wdth, int len);
 char	*ft_end_whitespaces(var *s, int wdth, int len);
 char	*ft_crop_str(char *str, int len, int crop);

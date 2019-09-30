@@ -13,9 +13,9 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-float			ft_power(float nb, int power)
+long double			ft_power(long double nb, int power)
 {
-	float	s;
+	long double	s;
 
 	s = nb;
 	if (power < 0)
@@ -27,7 +27,7 @@ float			ft_power(float nb, int power)
 	return (nb);
 }
 
-float_struct	ft_create_double_list(float_struct tmp, long double n)
+float_struct	ft_create_double_list(float_struct tmp, long double n, int precision)
 {
 	long double		num;
 
@@ -41,26 +41,38 @@ float_struct	ft_create_double_list(float_struct tmp, long double n)
 		tmp.power++;
 	}
 	tmp.base = num;
-	tmp.mantisa = n - (long double)(long int)n;
+	tmp.mantisa = (n - (uintmax_t)n);
+/*	ft_putchar('|');
+	ft_putnbr(n * 1000000);
+	ft_putchar('|');*/
 	return (tmp);
 }
 
-float_struct	ft_create_double(long double n, int precision)
+float_struct	ft_create_double(long double n, int precision, var *var_struct)
 {
 	float_struct	tmp;
 
+	tmp.zero_len = 0;
 	tmp.mantisa_len = 0;
-	tmp = ft_create_double_list(tmp, n);
-	precision = (precision > 6) ? 6 : precision;
-	if (precision > 0)
-		tmp.mantisa += 0.5 * ft_power(0.1, precision);
-	while (tmp.mantisa_len < 6)
+	tmp = ft_create_double_list(tmp, n, precision);
+	while (tmp.mantisa_len < precision && tmp.mantisa > 0)
 	{
 		tmp.mantisa_len++;
 		tmp.mantisa *= 10;
+		if ((long long int)tmp.mantisa == 0)
+			tmp.zero_len++;
 	}
+	if (tmp.zero_len > 0)
+		tmp.mantisa_len = tmp.zero_len;
+	else
+		tmp.mantisa_len = precision;
+	/*
+	ft_putchar('|');
+	ft_putnbr(tmp.mantisa_len);
+	ft_putchar('|');
+*/
 	tmp.num = n;
-	if (n < 0)
+	if (var_struct->arg_sign == -1)
 	{
 		tmp.base *= -1;
 		tmp.mantisa *= -1;
@@ -68,21 +80,40 @@ float_struct	ft_create_double(long double n, int precision)
 	return (tmp);
 }
 
-char			*ft_start_double(long double n, int precision)
+char			*ft_start_double(long double n, var *var_struct)
 {
 	float_struct	tmp;
-	int				wdth;
+	int				precision;
+	int				len;
+	long double		num;
 
-	wdth = (tmp.mantisa_len) ? (tmp.mantisa_len) : 0;
-	tmp = ft_create_double(n, precision);
-	tmp.res = ft_strjoin(tmp.res, ft_itoa((int)tmp.num));
-	if (tmp.mantisa != 0)
+	len = 0;
+	//ft_putnbr(n);
+	var_struct->arg_sign = (n < 0) ? -1 : 1;
+	n = (n >= 0) ? n : n * (-1);
+	num = n;
+	precision = 0;
+	if (!(var_struct->precision == 0 && var_struct->precision_flag == 1))
+		precision = (var_struct->precision == 0) ? 6 : var_struct->precision;
+/*	
+	ft_putchar('|');
+	ft_putnbr(precision);
+	ft_putchar('|');
+*/
+	n += 0.5 * ft_power(0.1, precision);
+	tmp = ft_create_double(n, precision, var_struct);
+	tmp.res = ft_itoa((int)tmp.num);
+	if (!(var_struct->precision == 0 && var_struct->precision_flag == 1))
 	{
+		
 		tmp.res = ft_strjoin(tmp.res, ".");
-		if ((int)ft_strlen(ft_itoa((int)tmp.mantisa)) < tmp.mantisa_len)
-			while ((int)ft_strlen(ft_itoa((int)tmp.mantisa)) < tmp.mantisa_len--)
-				tmp.res = ft_strjoin(tmp.res, "0");
-		tmp.res = ft_strjoin(tmp.res, ft_itoa((int)tmp.mantisa));
+		while (tmp.mantisa_len > 0 && tmp.zero_len > 0)
+		{
+			tmp.res = ft_strjoin(tmp.res, "0");
+			tmp.mantisa_len--;
+		}
+		if ((long long int)tmp.mantisa > 0)
+			tmp.res = ft_strjoin(tmp.res, ft_ullitoa((uintmax_t)tmp.mantisa, var_struct));
 	}
 	return (tmp.res);
 }

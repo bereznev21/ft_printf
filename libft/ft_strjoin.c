@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 06:21:19 by tlynesse          #+#    #+#             */
-/*   Updated: 2018/12/05 14:14:46 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/09/18 16:18:41 by tlynesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[j] != '\0')
 		res[i++] = s2[j++];
 	res[i] = 0;
+	//free((void *)s1);
+	//free((void *)s2);
 	return (res);
 }

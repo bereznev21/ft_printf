@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ntlstn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:10:33 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/03 17:10:34 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/09/28 21:51:57 by tlynesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ var				*ft_ntlstn_var(var *tmp)
 	tmp->data = 0;
 	tmp->arg_sign = 1;
 	tmp->flag = '?';
+	tmp->flag2 = '?';
 	tmp->flag_1 = '?';
 	tmp->precision = 0;
 	tmp->precision_flag = 0;
@@ -51,12 +52,23 @@ int				ft_create_list_var(const char *mas, int i,
 	str1 = ft_create_arg_string(str1, tmp, str);
 	if (str1 == 0 && tmp->type == 'c')
 	{
-		while (tmp->width-- > 1)
+		if (tmp->flag != '-')
 		{
-			ft_putchar(' ');
-			nul++;
+			while (tmp->width-- > 1)
+			{
+				ft_putchar(' ');
+				nul++;
+			}
 		}
 		write (1, &str1, 1);
+		if (tmp->flag == '-')
+		{
+			while (tmp->width-- > 1)
+			{
+				ft_putchar(' ');
+				nul++;
+			}
+		}
 		return (nul);
 	}
 	if (!str)
@@ -96,15 +108,32 @@ var				*ft_srchflgs(var *tmp, int *i, const char *mas)
 		tmp->flag = mas[(*i)++];
 	if (mas[*i] == '-' || mas[*i] == '+' || mas[*i] == ' '
 		|| mas[*i] == '0')
+	{
+		if (tmp->flag == ' ')
+			tmp->flag2 = ' ';
 		tmp->flag = mas[(*i)++];
+	}
 	if (mas[*i] == '+' || mas[*i] == ' ' || mas[*i] == '#')
 		tmp->flag2 = mas[(*i)++];
 	if (mas[*i] == ' ' && tmp->flag == '+')
 		(*i)++;
 	if (mas[*i] == '-')
+	{
+		if ((tmp->flag == '+' || tmp->flag == '-' || tmp->flag == ' ') && tmp->flag2 == '#')
+		{
+			tmp->flag2 = tmp->flag;
+			tmp->flag_1 = '#';
+		}
+		if (tmp->flag == '+')
+			tmp->flag2 = '+';
+		if (tmp->flag == '-')
+			tmp->flag2 = '-';
 		tmp->flag = mas[(*i)++];
+	}
 	if (mas[*i] == '0')
 		tmp->flag_1 = mas[(*i)++];
+	if (mas[*i] == '-' && tmp->flag_1 == '0')
+		tmp->flag = mas[(*i)++];
 	if (mas[*i] >= '0' && mas[*i] <= '9')
 		while (mas[*i] >= '0' && mas[*i] <= '9')
 			tmp->width = tmp->width * 10 + mas[(*i)++] - '0';

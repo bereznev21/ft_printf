@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static void	ft_puting_ulli_to_a(unsigned long long int n, char **res, size_t buf)
+static void	ft_puting_ulli_to_a(uintmax_t n, char **res, size_t buf)
 {
 	while (n)
 	{
@@ -21,7 +21,7 @@ static void	ft_puting_ulli_to_a(unsigned long long int n, char **res, size_t buf
 	}
 }
 
-char		*ft_ullitoa(long long int nb, var *tmp)
+char		*ft_ullitoa(uintmax_t nb, var *tmp)
 {
 	char					*res;
 	unsigned long long int	k;
@@ -30,6 +30,7 @@ char		*ft_ullitoa(long long int nb, var *tmp)
     (void)tmp->arg_sign;
 	if (nb == 0)
 		return (ft_strdup("0"));
+	//printf("|%.21Ld|", tmp);
 	buf = 1;
 	k = nb;
 	while (k)

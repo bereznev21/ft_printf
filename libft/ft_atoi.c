@@ -26,9 +26,9 @@ static int	ft_sign(const char **s)
 
 int			ft_atoi(const char *str)
 {
-	long	res;
-	int		fl;
-	long	tmp;
+	intmax_t	res;
+	int			fl;
+	long		tmp;
 
 	res = 0;
 	while (*str == ' ' || *str == '\t' || *str == '\v' ||

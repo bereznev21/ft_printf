@@ -6,7 +6,7 @@
 /*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/13 19:56:50 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/09/29 19:03:57 by tlynesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char	*ft_print_s(var *s)
 		len--;
 	s->precision = (s->precision >= len) ? 0 : s->precision;
 	if (!(str = ft_strnew(wdth)))
-		exit (0);
+		exit(0);
 	if (s->precision)
 	{
 		s->data = ft_crop_str(s->data, len, s->precision);
