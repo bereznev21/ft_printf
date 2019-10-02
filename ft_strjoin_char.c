@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin_char.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 13:46:09 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/04 13:46:11 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/01 19:50:39 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char			*ft_strjoin_char(char *str, char end)
+char	*ft_strjoin_char(char *str, char end)
 {
 	int		i;
 	char	*tmp;

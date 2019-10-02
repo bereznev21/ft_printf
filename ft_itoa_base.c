@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 18:12:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/13 20:00:52 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/10/01 19:35:01 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static size_t	digit_count(intmax_t nb, int base)
 	return (i);
 }
 
-char			*ft_itoa_base(intmax_t value, int base, char type)
+char			*ft_itoa_base(intmax_t value, int base, var *tmp)
 {
 	char	*ret;
 	char	*tab_base;
@@ -34,24 +34,16 @@ char			*ft_itoa_base(intmax_t value, int base, char type)
 	int		sign;
 
 	tab_base = 0;
+	i = 1;
+	sign = (base == 10 && value < 0) ? -1 : 0;
 	if (base < 2 || base > 16)
 		return (0);
-	if (base == 10 && value == -2147483648)
-		return ("-2147483648");
-	sign = 0;
-	if (base == 10 && value < 0)
-		sign = -1;
 	if (value == 0)
 		return ("0");
 	tab_base = (char*)malloc(sizeof(char) * 17);
-	if (type == 'X')
-		tab_base = "0123456789ABCDEF";
-	else
-		tab_base = "0123456789abcdef";
-	taille = digit_count(value, base);
-	taille += (sign ? 1 : 0);
+	tab_base = (tmp->type == 'X') ? "0123456789ABCDEF" : "0123456789abcdef";
+	taille = digit_count(value, base) + sign;
 	ret = (char *)malloc(sizeof(char) * (taille + 1));
-	i = 1;
 	sign ? (ret[0] = '-') : 0;
 	while (value != 0)
 	{

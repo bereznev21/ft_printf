@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_p.c                                       :+:      :+:    :+:   */
+/*   ft_get_p.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 17:13:29 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 17:28:28 by rpoetess         ###   ########.fr       */
+/*   Created: 2019/10/01 17:27:13 by rpoetess          #+#    #+#             */
+/*   Updated: 2019/10/01 17:32:34 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_print_p(var *tmp)
+char	*ft_get_p(char *str1, var *tmp, va_list str)
 {
-	tmp->flag2 = '#';
-	tmp->data = ft_print_x(tmp);
-	return (tmp->data);
+	int long long	nb;
+
+	nb = (uintmax_t)va_arg(str, void *);
+	str1 = ft_uitoa_base(nb, 16, tmp->type);
+	return (str1);
 }

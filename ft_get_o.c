@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_o.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:52:11 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/21 05:43:25 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/10/01 19:42:40 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,11 @@ char	*ft_get_o(char *str1, var *tmp, va_list str)
 	}
 	if (nb == 0)
 	{
-		
 		if (tmp->precision == 0 && tmp->precision_flag == 1)
 			return ("");
 		if (tmp->flag2 == '#')
 			return ("");
-		/*
-		if (tmp->flag == '0' && tmp->flag2 == '#' && tmp->flag_1 == '?')
-			return ("");
-		if (tmp->precision_flag == 0)
-		{
-			if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '?')
-				return ("");
-			if (tmp->flag == '-' && tmp->flag2 == '#' && tmp->flag_1 == '?')
-				return ("");
-			if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '0')
-				return ("");
-		}
-		if (tmp->precision_flag == 1)
-		{
-			if (tmp->flag == '-' && tmp->flag2 == '#' && tmp->flag_1 == '?')
-				return ("");
-			if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '0')
-				return ("");
-			if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '?')
-				return ("");
-		}*/
 	}
-	str1 = ft_itoa_base(nb, 8, tmp->type);
+	str1 = ft_itoa_base(nb, 8, tmp);
 	return (str1);
 }

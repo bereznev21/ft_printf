@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ullitoa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 14:01:05 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/16 14:01:07 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/01 19:51:15 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ char		*ft_ullitoa(uintmax_t nb, var *tmp)
 	unsigned long long int	k;
 	size_t					buf;
 
-    (void)tmp->arg_sign;
 	if (nb == 0)
 		return (ft_strdup("0"));
-	//printf("|%.21Ld|", tmp);
 	buf = 1;
 	k = nb;
 	while (k)

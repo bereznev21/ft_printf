@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/29 19:03:57 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/10/01 17:58:25 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,9 @@ char	*ft_print_s(var *s)
 		return (0);
 	s->data = (!(s->data)) ? "(null)" : s->data;
 	if (s->precision == 0 && s->precision_flag == 1 && s->type == 's')
-	{
 		s->data = "";
-	}
 	len = ft_strlen(s->data);
-	if (s->arg_sign == -1 || s->flag2 == '+')
-		len--;
+	len = (s->arg_sign == -1 || s->flag2 == '+') ? len-- : len;
 	s->precision = (s->precision >= len) ? 0 : s->precision;
 	if (!(str = ft_strnew(wdth)))
 		exit(0);
@@ -76,12 +73,8 @@ char	*ft_print_s(var *s)
 		len = (len > s->precision) ? s->precision : len;
 	}
 	if (s->width && s->width > (int)ft_strlen(s->data))
-	{
-		if (s->flag != '-')
-			s->data = ft_fil_whitespaces(s, wdth, len);
-		else if (s->flag == '-')
-			s->data = ft_end_whitespaces(s, wdth, len);
-	}
+		s->data = (s->flag != '-') ? ft_fil_whitespaces(s, wdth, len) :
+		ft_end_whitespaces(s, wdth, len);
 	str = ft_strjoin(str, s->data);
 	return (str);
 }

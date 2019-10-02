@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 14:02:25 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/16 14:02:41 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/01 19:36:41 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,13 @@ char			*ft_uitoa_base(uintmax_t value, int base, char type)
 	int		i;
 	int		sign;
 
-	tab_base = 0;
 	if (base < 2 || base > 16)
 		return (0);
 	sign = 0;
 	if (value == 0)
 		return ("0");
 	tab_base = (char*)malloc(sizeof(char) * 17);
-	if (type == 'X')
-		tab_base = "0123456789ABCDEF";
-	else
-		tab_base = "0123456789abcdef";
+	tab_base = (type == 'X') ? "0123456789ABCDEF" : "0123456789abcdef";
 	taille = udigit_count(value, base);
 	taille += (sign ? 1 : 0);
 	ret = (char *)malloc(sizeof(char) * (taille + 1));

@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_d.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 20:29:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/09 20:29:54 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/01 23:48:12 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+
+size_t	ft_get_d_1(size_t nb, var *tmp, va_list str)
+{
+	if (tmp->size2 == 'l')
+		nb = va_arg(str, long long int);
+	else
+		nb = va_arg(str, long int);
+	return (nb);
+}
 
 char	*ft_get_d(char *str1, var *tmp, va_list str)
 {
@@ -19,12 +27,7 @@ char	*ft_get_d(char *str1, var *tmp, va_list str)
 
 	nb = 0;
 	if (tmp->size1 == 'l')
-	{
-		if (tmp->size2 == 'l')
-			nb = va_arg(str, long long int);
-		else
-			nb = va_arg(str, long int);
-	}
+		nb = ft_get_d_1(nb, tmp, str);
 	else if (tmp->size1 == 'h')
 	{
 		if (tmp->size2 == 'h')

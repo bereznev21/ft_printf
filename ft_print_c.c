@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:27:43 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/08/31 16:29:13 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/01 19:46:51 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_print_c(var *s)
 {
 	char	*str;
+
 	s->width = (s->data > 0) ? s->width : 0;
 	str = ft_print_s(s);
 	return (str);
