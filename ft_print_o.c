@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 16:39:28 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 23:58:37 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:29:23 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	if_flag_zero3(var *tmp)
+void	if_flag_zero3(t_var *tmp)
 {
 	if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '?')
 		tmp->data = ft_strjoin("0", tmp->data);
@@ -40,7 +40,7 @@ void	if_flag_zero3(var *tmp)
 		tmp->data = ft_strjoin("0", tmp->data);
 }
 
-void	if_flag_zero2(var *tmp)
+void	if_flag_zero2(t_var *tmp)
 {
 	if (tmp->flag == '0' && tmp->flag2 == '#' && tmp->flag_1 == '?')
 	{
@@ -58,7 +58,7 @@ void	if_flag_zero2(var *tmp)
 	}
 }
 
-void	if_flag_zero1(var *tmp)
+void	if_flag_zero1(t_var *tmp)
 {
 	if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '?')
 		tmp->data = ft_strjoin("0", tmp->data);
@@ -86,7 +86,7 @@ void	if_flag_zero1(var *tmp)
 	if_flag_zero2(tmp);
 }
 
-char	*ft_print_o(var *tmp)
+char	*ft_print_o(t_var *tmp)
 {
 	int flag_zero;
 

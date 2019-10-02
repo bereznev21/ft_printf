@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 18:12:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 19:35:01 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:27:36 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static size_t	digit_count(intmax_t nb, int base)
 	return (i);
 }
 
-char			*ft_itoa_base(intmax_t value, int base, var *tmp)
+char			*ft_itoa_base(intmax_t value, int base, t_var *tmp)
 {
 	char	*ret;
 	char	*tab_base;

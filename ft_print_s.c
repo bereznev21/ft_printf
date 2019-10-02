@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 17:58:25 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:29:40 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_fil_whitespaces(var *s, int wdth, int len)
+char	*ft_fil_whitespaces(t_var *s, int wdth, int len)
 {
 	int		i;
 
@@ -26,7 +26,7 @@ char	*ft_fil_whitespaces(var *s, int wdth, int len)
 	return (s->data);
 }
 
-char	*ft_end_whitespaces(var *s, int wdth, int len)
+char	*ft_end_whitespaces(t_var *s, int wdth, int len)
 {
 	int		i;
 
@@ -50,7 +50,7 @@ char	*ft_crop_str(char *str, int len, int crop)
 	return (str);
 }
 
-char	*ft_print_s(var *s)
+char	*ft_print_s(t_var *s)
 {
 	char	*str;
 	int		wdth;

@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:37:01 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 23:05:46 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:29:06 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_ngtv_argsgn(var *tmp)
+void	ft_ngtv_argsgn(t_var *tmp)
 {
 	if (tmp->flag == '-' && tmp->flag2 == '#' && tmp->flag_1 == '?')
 		tmp->data = ft_strjoin("-", tmp->data);
@@ -32,7 +32,7 @@ void	ft_ngtv_argsgn(var *tmp)
 	}
 }
 
-void	ft_pstv_argsgn(var *tmp)
+void	ft_pstv_argsgn(t_var *tmp)
 {
 	if (tmp->flag == '0' && tmp->flag2 == '?' && tmp->flag_1 == '?')
 		tmp->flag2 = '0';
@@ -42,7 +42,7 @@ void	ft_pstv_argsgn(var *tmp)
 		tmp->data = ft_strjoin(" ", tmp->data);
 }
 
-void	ft_dot(var *tmp)
+void	ft_dot(t_var *tmp)
 {
 	if (tmp->precision == 0 && tmp->precision_flag == 1)
 	{
@@ -60,7 +60,7 @@ void	ft_dot(var *tmp)
 	}
 }
 
-char	*ft_print_f(var *tmp)
+char	*ft_print_f(t_var *tmp)
 {
 	if (tmp->arg_sign == -1)
 		ft_ngtv_argsgn(tmp);

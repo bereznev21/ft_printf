@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_d_pstv_rgsgn_prcsn_0.c                    :+:      :+:    :+:   */
+/*   ft_print_d_pstv_rgsgn_prcsn_z.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 21:15:19 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 21:29:46 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:28:41 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_flag_minus(var *tmp)
+void	ft_flag_minus(t_var *tmp)
 {
 	if (tmp->flag == '-')
 	{
@@ -33,7 +33,7 @@ void	ft_flag_minus(var *tmp)
 	}
 }
 
-void	ft_flag_zero(var *tmp)
+void	ft_flag_zero(t_var *tmp)
 {
 	if (tmp->flag == '0')
 	{
@@ -54,7 +54,7 @@ void	ft_flag_zero(var *tmp)
 	}
 }
 
-void	ft_flag_space(var *tmp)
+void	ft_flag_space(t_var *tmp)
 {
 	if (tmp->flag2 == ' ')
 	{
@@ -74,7 +74,7 @@ void	ft_flag_space(var *tmp)
 	}
 }
 
-void	ft_if_pstv_rgsgn_prcsn_0(var *tmp)
+void	ft_if_pstv_rgsgn_prcsn_0(t_var *tmp)
 {
 	if (tmp->flag == ' ' && tmp->flag2 == '?')
 		if (tmp->width <= (int)ft_strlen(tmp->data))

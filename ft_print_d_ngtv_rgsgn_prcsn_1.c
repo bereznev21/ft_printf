@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 21:44:25 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 22:14:58 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:28:12 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_flag_qstn(var *tmp)
+void	ft_flag_qstn(t_var *tmp)
 {
 	if (tmp->flag == '?')
 	{
@@ -36,7 +36,7 @@ void	ft_flag_qstn(var *tmp)
 	}
 }
 
-void	ft_flag_minus_space(var *tmp)
+void	ft_flag_minus_space(t_var *tmp)
 {
 	if (tmp->flag == '-')
 	{
@@ -56,7 +56,7 @@ void	ft_flag_minus_space(var *tmp)
 				tmp->data = ft_strjoin_left("-", tmp->data);
 }
 
-void	ft_flag_zero_1(var *tmp)
+void	ft_flag_zero_1(t_var *tmp)
 {
 	if (tmp->flag2 == '?' && tmp->flag_1 == '?')
 	{
@@ -83,7 +83,7 @@ void	ft_flag_zero_1(var *tmp)
 	}
 }
 
-void	ft_if_ngtv_rgsgn_prcsn_1(var *tmp)
+void	ft_if_ngtv_rgsgn_prcsn_1(t_var *tmp)
 {
 	ft_flag_qstn(tmp);
 	ft_flag_minus_space(tmp);

@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 21:15:26 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 21:22:35 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:28:28 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_flag_plus(var *tmp)
+void	ft_flag_plus(t_var *tmp)
 {
 	if (tmp->flag == '+')
 	{
@@ -33,7 +33,7 @@ void	ft_flag_plus(var *tmp)
 	}
 }
 
-void	ft_flag_0(var *tmp)
+void	ft_flag_0(t_var *tmp)
 {
 	if (tmp->flag == '0')
 	{
@@ -56,7 +56,7 @@ void	ft_flag_0(var *tmp)
 	}
 }
 
-void	ft_if_pstv_rgsgn_prcsn_1(var *tmp)
+void	ft_if_pstv_rgsgn_prcsn_1(t_var *tmp)
 {
 	ft_flag_plus(tmp);
 	ft_flag_0(tmp);

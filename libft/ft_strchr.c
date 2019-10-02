@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 21:07:07 by tlynesse          #+#    #+#             */
-/*   Updated: 2018/11/25 04:45:32 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:15:26 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ char	*ft_strchr(const char *s, int c)
 	else
 		return (0);
 }
-

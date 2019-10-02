@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_pc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 18:13:26 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/04 18:13:28 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:29:33 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_print_pc(var *s)
+char	*ft_print_pc(t_var *s)
 {
 	return (s->data);
 }

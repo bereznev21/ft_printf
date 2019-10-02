@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 18:17:29 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 23:29:45 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:24:47 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_ox(var *tmp)
+void	ft_ox(t_var *tmp)
 {
 	if (tmp->type == 'x' || tmp->type == 'p')
 		tmp->data = ft_strjoin_left("0x", tmp->data);
@@ -20,7 +20,7 @@ void	ft_ox(var *tmp)
 		tmp->data = ft_strjoin_left("0X", tmp->data);
 }
 
-void	ft_flag_zero_prcs_zero(var *tmp)
+void	ft_flag_zero_prcs_zero(t_var *tmp)
 {
 	if (tmp->precision_flag == 0)
 	{
@@ -39,7 +39,7 @@ void	ft_flag_zero_prcs_zero(var *tmp)
 	}
 }
 
-void	ft_flag_zero_prcs_one(var *tmp)
+void	ft_flag_zero_prcs_one(t_var *tmp)
 {
 	if (tmp->precision_flag == 1)
 	{
@@ -61,7 +61,7 @@ void	ft_flag_zero_prcs_one(var *tmp)
 	}
 }
 
-void	ft_flag_zero3(var *tmp, int flag_zero)
+void	ft_flag_zero3(t_var *tmp, int flag_zero)
 {
 	if (flag_zero == 0)
 	{
@@ -78,7 +78,7 @@ void	ft_flag_zero3(var *tmp, int flag_zero)
 	}
 }
 
-char	*ft_print_x(var *tmp)
+char	*ft_print_x(t_var *tmp)
 {
 	int	flag_zero;
 

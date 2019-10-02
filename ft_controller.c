@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_controller.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:10:55 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/08/31 16:10:57 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:32:32 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_write(char *res)
 	return (len);
 }
 
-int	ft_controller(var *tmp)
+int	ft_controller(t_var *tmp)
 {
 	char *res;
 

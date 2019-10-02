@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:17:18 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 19:14:37 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:31:38 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ long double		ft_power(long double nb, int power)
 	return (nb);
 }
 
-float_struct	ft_create_double_list(float_struct tmp,
+t_float_struct	ft_create_double_list(t_float_struct tmp,
 long double n, int precision)
 {
 	long double		num;
@@ -45,9 +45,10 @@ long double n, int precision)
 	return (tmp);
 }
 
-float_struct	ft_create_double(long double n, int precision, var *var_struct)
+t_float_struct	ft_create_double(long double n,
+int precision, t_var *var_struct)
 {
-	float_struct	tmp;
+	t_float_struct	tmp;
 
 	tmp.zero_len = 0;
 	tmp.mantisa_len = 0;
@@ -73,9 +74,9 @@ float_struct	ft_create_double(long double n, int precision, var *var_struct)
 	return (tmp);
 }
 
-char			*ft_start_double(long double n, var *var_struct)
+char			*ft_start_double(long double n, t_var *var_struct)
 {
-	float_struct	tmp;
+	t_float_struct	tmp;
 	int				precision;
 	int				len;
 

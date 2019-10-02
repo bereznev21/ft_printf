@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 20:27:52 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/09 20:27:54 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:27:25 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_get_u(char *str1, var *tmp, va_list str)
+char	*ft_get_u(char *str1, t_var *tmp, va_list str)
 {
 	uintmax_t	nb;
 

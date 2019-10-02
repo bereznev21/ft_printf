@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toa.c                                           :+:      :+:    :+:   */
+/*   ft_llitoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:23:56 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/09/03 17:23:58 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:27:44 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_puting_lli_to_a(long long int n, char **res, size_t buf)
 	}
 }
 
-char		*ft_llitoa(long long int nb, var *tmp)
+char		*ft_llitoa(long long int nb, t_var *tmp)
 {
 	char			*res;
 	long long int	k;

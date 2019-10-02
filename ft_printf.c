@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:35:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 17:39:27 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:25:43 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char		*ft_create_arg_string(char *str1, var *tmp, va_list str)
+char		*ft_create_arg_string(char *str1, t_var *tmp, va_list str)
 {
 	if (tmp->type == 'c' || tmp->type == '%')
 		str1 = ft_get_c(str1, tmp, str);

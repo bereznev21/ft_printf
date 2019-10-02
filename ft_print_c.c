@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:27:43 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 19:46:51 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:28:02 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_print_c(var *s)
+char	*ft_print_c(t_var *s)
 {
 	char	*str;
 

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 14:01:05 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 19:51:15 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:30:36 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_puting_ulli_to_a(uintmax_t n, char **res, size_t buf)
 	}
 }
 
-char		*ft_ullitoa(uintmax_t nb, var *tmp)
+char		*ft_ullitoa(uintmax_t nb, t_var *tmp)
 {
 	char					*res;
 	unsigned long long int	k;

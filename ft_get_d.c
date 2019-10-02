@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 20:29:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 23:48:12 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:26:57 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_get_d_1(size_t nb, var *tmp, va_list str)
+size_t	ft_get_d_1(size_t nb, t_var *tmp, va_list str)
 {
 	if (tmp->size2 == 'l')
 		nb = va_arg(str, long long int);
@@ -21,7 +21,7 @@ size_t	ft_get_d_1(size_t nb, var *tmp, va_list str)
 	return (nb);
 }
 
-char	*ft_get_d(char *str1, var *tmp, va_list str)
+char	*ft_get_d(char *str1, t_var *tmp, va_list str)
 {
 	size_t	nb;
 

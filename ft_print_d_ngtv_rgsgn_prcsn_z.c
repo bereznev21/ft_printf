@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 21:40:31 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 22:39:52 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:28:19 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_flag_zero_2(var *tmp)
+void	ft_flag_zero_2(t_var *tmp)
 {
 	if (tmp->flag == '0')
 	{
@@ -35,7 +35,7 @@ void	ft_flag_zero_2(var *tmp)
 	}
 }
 
-void	ft_if_ngtv_rgsgn_prcsn_0(var *tmp)
+void	ft_if_ngtv_rgsgn_prcsn_0(t_var *tmp)
 {
 	if (tmp->flag == '?')
 		tmp->data = ft_strjoin_left("-", tmp->data);

@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:52:11 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 19:42:40 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:27:15 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_get_o(char *str1, var *tmp, va_list str)
+char	*ft_get_o(char *str1, t_var *tmp, va_list str)
 {
 	intmax_t	nb;
 

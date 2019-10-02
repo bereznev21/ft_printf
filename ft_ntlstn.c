@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:10:33 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/01 23:42:54 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:25:10 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-var				*ft_ntlstn_var(var *tmp)
+t_var				*ft_ntlstn_var(t_var *tmp)
 {
 	tmp->width = 0;
 	tmp->data = 0;
@@ -27,7 +27,7 @@ var				*ft_ntlstn_var(var *tmp)
 	return (tmp);
 }
 
-var				*ft_ifseedot(var *tmp, int *i, const char *mas)
+t_var				*ft_ifseedot(t_var *tmp, int *i, const char *mas)
 {
 	(*i)++;
 	tmp->precision_flag = 1;
@@ -50,7 +50,7 @@ var				*ft_ifseedot(var *tmp, int *i, const char *mas)
 	return (tmp);
 }
 
-void			ft_srchflgs2(var *tmp, int *i, const char *mas)
+void			ft_srchflgs2(t_var *tmp, int *i, const char *mas)
 {
 	if (mas[*i] == '-' || mas[*i] == '+' || mas[*i] == ' '
 		|| mas[*i] == '0')
@@ -79,7 +79,7 @@ void			ft_srchflgs2(var *tmp, int *i, const char *mas)
 	}
 }
 
-var				*ft_srchflgs(var *tmp, int *i, const char *mas)
+t_var				*ft_srchflgs(t_var *tmp, int *i, const char *mas)
 {
 	tmp = ft_ntlstn_var(tmp);
 	while (mas[*i] == ' ')
