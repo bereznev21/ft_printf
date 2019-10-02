@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 22:47:02 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:24:18 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:35:38 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ char				*ft_start_double(long double n, t_var *var_struct);
 char				*ft_fil_whitespaces(t_var *s, int wdth, int len);
 char				*ft_end_whitespaces(t_var *s, int wdth, int len);
 char				*ft_crop_str(char *str, int len, int crop);
-t_var					*ft_ntlstn_var(t_var *tmp);
+t_var				*ft_ntlstn_var(t_var *tmp);
 int					ft_ifprecent(const char *format, va_list str, int *i);
 int					ft_ifnopercent(const char *format, int *i);
-t_var					*ft_ifseedot(t_var *tmp, int *i, const char *mas);
-t_var					*ft_srchflgs(t_var *tmp, int *i, const char *mas);
+t_var				*ft_ifseedot(t_var *tmp, int *i, const char *mas);
+t_var				*ft_srchflgs(t_var *tmp, int *i, const char *mas);
 char				*ft_convert108(intmax_t nmb);
 char				*ft_create_xi(char *s, unsigned int n, int sz);
 char				*ft_get_d(char *str1, t_var *tmp, va_list str);

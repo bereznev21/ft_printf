@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:10:33 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:25:10 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 22:34:57 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_var				*ft_ifseedot(t_var *tmp, int *i, const char *mas)
 	return (tmp);
 }
 
-void			ft_srchflgs2(t_var *tmp, int *i, const char *mas)
+void				ft_srchflgs2(t_var *tmp, int *i, const char *mas)
 {
 	if (mas[*i] == '-' || mas[*i] == '+' || mas[*i] == ' '
 		|| mas[*i] == '0')
