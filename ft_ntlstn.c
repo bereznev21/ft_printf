@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:10:33 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/03 19:00:11 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/03 19:26:42 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,9 +123,7 @@ void				ft_crtflgs1(t_var *tmp, t_flags flgs)
 			tmp->flag2 = ' ';
 	}
 	else if (flgs.space)
-	{
 		tmp->flag = ' ';
-	}
 	else if (flgs.grab)
 	{
 		tmp->flag2 = '#';
@@ -172,8 +170,8 @@ t_var				*ft_srchflgs(t_var *tmp, int *i, const char *mas)
 		tmp->width = mas[*i++];
 	if (mas[*i] == '.')
 		tmp = ft_ifseedot(tmp, i, mas);
-	if (mas[*i] == 'h' || mas[*i] == 'l' || mas[(*i)] == 'L'
-		|| mas[*i] == 'j' || mas[*i] == 'z')
+	while (mas[*i] == 'h' || mas[*i] == 'l' || mas[(*i)] == 'L'
+	|| mas[*i] == 'j' || mas[*i] == 'z')
 	{
 		tmp->size1 = mas[(*i)++];
 		if ((mas[*i] == 'h' || mas[*i] == 'l') && tmp->size1 != 'L'
