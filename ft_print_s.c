@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:29:40 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/03 21:05:52 by tlynesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_fil_whitespaces(t_var *s, int wdth, int len)
 	i = 0;
 	if (s->flag != '0')
 		while (wdth - len > i++)
-			s->data = ft_strjoin(" ", s->data);
+			s->data = ft_strjoin_left(" ", s->data);
 	else
 		while (wdth - len > i++)
-			s->data = ft_strjoin("0", s->data);
+			s->data = ft_strjoin_right("0", s->data);
 	return (s->data);
 }
 
@@ -32,7 +32,7 @@ char	*ft_end_whitespaces(t_var *s, int wdth, int len)
 
 	i = 0;
 	while (wdth - len > i++)
-		s->data = ft_strjoin(s->data, " ");
+		s->data = ft_strjoin_right(s->data, " ");
 	return (s->data);
 }
 
@@ -40,7 +40,6 @@ char	*ft_crop_str(char *str, int len, int crop)
 {
 	char	*tmp;
 
-	tmp = 0;
 	if (len > crop)
 	{
 		tmp = ft_strnew(crop);
@@ -75,6 +74,7 @@ char	*ft_print_s(t_var *s)
 	if (s->width && s->width > (int)ft_strlen(s->data))
 		s->data = (s->flag != '-') ? ft_fil_whitespaces(s, wdth, len) :
 		ft_end_whitespaces(s, wdth, len);
-	str = ft_strjoin(str, s->data);
+	str = ft_strjoin_right(str, s->data);
+	ft_free_str(&s->data);
 	return (str);
 }

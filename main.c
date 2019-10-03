@@ -24,9 +24,39 @@ int	main(void)
 
 //	printf("%5");
 //	ft_printf("%5");
+	int *a;
+	*a = 10;
 
-	printf("%+05.0f\n", 7.3);
-	ft_printf("%+05.0f", 7.3);
-
+	printf("%%\n");
+	ft_printf("%%\n");
+	
+	printf("%c\n", 'a');
+	ft_printf("%c\n", 'a');
+	
+	printf("%s\n", "Hellow World!");
+	ft_printf("%s\n", "Hellow World!");
+	
+	printf("%p\n", a);
+	ft_printf("%p\n", a);
+	
+	printf("%d\n", 10);
+	ft_printf("%d\n", 10);
+	
+	printf("%o\n", 10);
+	ft_printf("%o\n", 10);
+	
+	printf("%u\n", 10);
+	ft_printf("%u\n", 10);
+	
+	printf("%x\n", 10);
+	ft_printf("%x\n", 10);
+	
+	printf("%X\n", 10);
+	ft_printf("%X\n", 10);
+	
+	printf("%f\n", 10.1);
+	ft_printf("%f\n", 10.1);
+	
+	
 	return (0);
 }

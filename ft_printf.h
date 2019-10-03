@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 22:47:02 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/03 17:56:53 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/03 21:06:17 by tlynesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ int					ft_check_type(char type);
 char				*ft_strjoin_char(char *str, char end);
 char				*ft_strjoin_left(const char *s1, char *s2);
 char				*ft_strjoin_right(char *s1, const char *s2);
+char				*ft_free_str(char **s);
 char				*ft_start_double(long double n, t_var *var_struct);
 char				*ft_fil_whitespaces(t_var *s, int wdth, int len);
 char				*ft_end_whitespaces(t_var *s, int wdth, int len);

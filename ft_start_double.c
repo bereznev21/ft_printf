@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_start_double.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:17:18 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:31:38 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/03 19:49:13 by tlynesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ long double n, int precision)
 	num = n;
 	tmp.power = 1;
 	tmp.mantisa_len = 0;
-	tmp.res = ft_strnew(0);
+	tmp.res = "";
 	while (num > 10)
 	{
 		num = num / 10;
@@ -90,14 +90,14 @@ char			*ft_start_double(long double n, t_var *var_struct)
 	tmp.res = ft_itoa_base((intmax_t)tmp.num, 10, var_struct);
 	if (!(var_struct->precision == 0 && var_struct->precision_flag == 1))
 	{
-		tmp.res = ft_strjoin(tmp.res, ".");
+		tmp.res = ft_strjoin_right(tmp.res, ".");
 		while (tmp.mantisa_len > 0 && tmp.zero_len > 0)
 		{
-			tmp.res = ft_strjoin(tmp.res, "0");
+			tmp.res = ft_strjoin_right(tmp.res, "0");
 			tmp.mantisa_len--;
 		}
 		if ((long long int)tmp.mantisa > 0)
-			tmp.res = ft_strjoin(tmp.res,
+			tmp.res = ft_strjoin_right(tmp.res,
 			ft_ullitoa((uintmax_t)tmp.mantisa, var_struct));
 	}
 	return (tmp.res);

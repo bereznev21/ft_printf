@@ -6,16 +6,18 @@
 /*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 06:21:19 by tlynesse          #+#    #+#             */
-/*   Updated: 2019/09/29 19:03:09 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/10/03 21:06:40 by tlynesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_free_str(char *s)
+char	*ft_free_str(char **s)
 {
-	if (ft_strlen(s) > 1)
-		free((void *)s);
+	if (ft_strlen(*s) > 1)
+		free((void *)*s);
+	*s = 0;
+	return (0);
 }
 
 char	*ft_strjoin_left(const char *s1, char *s2)
@@ -31,11 +33,9 @@ char	*ft_strjoin_left(const char *s1, char *s2)
 		return ((char *)s1);
 	l1 = ft_strlen(s1);
 	l2 = ft_strlen(s2);
+	res = 0;
 	if (!(res = (char*)malloc((l1 + l2 + 1) * sizeof(char))))
-	{
-		ft_free_str(s2);
-		return (0);
-	}
+		return (ft_free_str(&s2));
 	i = 0;
 	while (++i <= l1)
 		res[i - 1] = s1[i - 1];
@@ -43,7 +43,7 @@ char	*ft_strjoin_left(const char *s1, char *s2)
 	while (++i <= l2)
 		res[l1 + i - 1] = s2[i - 1];
 	res[l1 + l2] = 0;
-	ft_free_str(s2);
+	ft_free_str(&s2);
 	return (res);
 }
 
@@ -60,11 +60,9 @@ char	*ft_strjoin_right(char *s1, const char *s2)
 		return ((char *)s2);
 	l1 = ft_strlen(s1);
 	l2 = ft_strlen(s2);
+	res = 0;
 	if (!(res = (char*)malloc((l1 + l2 + 1) * sizeof(char))))
-	{
-		ft_free_str(s1);
-		return (0);
-	}
+		return (ft_free_str(&s1));
 	i = 0;
 	while (++i <= l1)
 		res[i - 1] = s1[i - 1];
@@ -72,6 +70,6 @@ char	*ft_strjoin_right(char *s1, const char *s2)
 	while (++i <= l2)
 		res[l1 + i - 1] = s2[i - 1];
 	res[l1 + l2] = 0;
-	ft_free_str(s1);
+	ft_free_str(&s1);
 	return (res);
 }
