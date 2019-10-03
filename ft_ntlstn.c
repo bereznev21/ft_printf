@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:10:33 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/03 19:26:42 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/03 19:29:13 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,41 +49,6 @@ t_var				*ft_ifseedot(t_var *tmp, int *i, const char *mas)
 	else if (ft_check_type(mas[(*i)]))
 		tmp->precision = 0;
 	return (tmp);
-}
-
-void				ft_srchflgs2(t_var *tmp, int *i, const char *mas)
-{
-	while (mas[*i] == ' ')
-		tmp->flag = mas[(*i)++];
-	if (mas[*i] == '-' || mas[*i] == '+' || mas[*i] == ' '
-		|| mas[*i] == '0')
-	{
-		if (tmp->flag == ' ')
-			tmp->flag2 = ' ';
-		tmp->flag = mas[(*i)++];
-	}
-	if (mas[*i] == '+' || mas[*i] == ' ' || mas[*i] == '#')
-		tmp->flag2 = mas[(*i)++];
-	if (mas[*i] == ' ' && tmp->flag == '+')
-		(*i)++;
-	if (mas[*i] == '-')
-	{
-		if ((tmp->flag == '+' || tmp->flag == '-'
-			|| tmp->flag == ' ') && tmp->flag2 == '#')
-		{
-			tmp->flag2 = tmp->flag;
-			tmp->flag_1 = '#';
-		}
-		if (tmp->flag == '+')
-			tmp->flag2 = '+';
-		if (tmp->flag == '-')
-			tmp->flag2 = '-';
-		tmp->flag = mas[(*i)++];
-	}
-	if (mas[*i] == '0')
-		tmp->flag_1 = mas[(*i)++];
-	if (mas[*i] == '-' && tmp->flag_1 == '0')
-		tmp->flag = mas[(*i)++];
 }
 
 void				ft_crtflgs1(t_var *tmp, t_flags flgs)
