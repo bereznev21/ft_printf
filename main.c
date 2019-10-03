@@ -57,6 +57,10 @@ int	main(void)
 	printf("%f\n", 10.1);
 	ft_printf("%f\n", 10.1);
 	
-	
+//============================================
+
+	printf("%1$s", NULL);
+	ft_printf("%1$s", NULL);
+
 	return (0);
 }
