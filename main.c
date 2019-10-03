@@ -25,8 +25,8 @@ int	main(void)
 //	printf("%5");
 //	ft_printf("%5");
 
-//	printf("%LLf\n", 42.5);
-	ft_printf("%Lf", 42.5);
+	printf("%+05.0f\n", 7.3);
+	ft_printf("%+05.0f", 7.3);
 
 	return (0);
 }

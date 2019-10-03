@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:35:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:25:43 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/02 23:53:34 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ int			ft_ifprecent(const char *format, va_list str, int *i)
 
 int			ft_printf(const char *format, ...)
 {
-	va_list		str;
 	int			i;
 	int			len;
+	va_list		str;
 
 	i = 0;
 	len = 0;

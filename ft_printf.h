@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 22:47:02 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:35:38 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/03 17:56:53 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@
 # include <limits.h>
 # include <float.h>
 # include <stdint.h>
+
+typedef struct		s_flags
+{
+	int				minus;
+	int				plus;
+	int				space;
+	int				zero;
+	int				grab;
+}					t_flags;
 
 typedef struct		s_var
 {
