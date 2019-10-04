@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 22:47:02 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/03 17:56:53 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/03 20:23:57 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ char				*ft_crop_str(char *str, int len, int crop);
 t_var				*ft_ntlstn_var(t_var *tmp);
 int					ft_ifprecent(const char *format, va_list str, int *i);
 int					ft_ifnopercent(const char *format, int *i);
+void				ft_crtflgs(int *i, t_var *tmp, const char *mas);
 t_var				*ft_ifseedot(t_var *tmp, int *i, const char *mas);
 t_var				*ft_srchflgs(t_var *tmp, int *i, const char *mas);
 char				*ft_convert108(intmax_t nmb);

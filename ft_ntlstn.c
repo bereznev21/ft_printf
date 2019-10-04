@@ -6,12 +6,11 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:10:33 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/03 19:29:13 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/03 20:20:06 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 t_var				*ft_ntlstn_var(t_var *tmp)
 {
@@ -49,79 +48,6 @@ t_var				*ft_ifseedot(t_var *tmp, int *i, const char *mas)
 	else if (ft_check_type(mas[(*i)]))
 		tmp->precision = 0;
 	return (tmp);
-}
-
-void				ft_crtflgs1(t_var *tmp, t_flags flgs)
-{
-	if (flgs.minus)
-	{
-		tmp->flag = '-';
-		if (flgs.plus)
-		{
-			tmp->flag2 = '+';
-			if (flgs.grab)
-				tmp->flag_1 = '#';
-		}
-		else if (flgs.space)
-		{
-			tmp->flag2 = ' ';
-			if (flgs.grab)
-				tmp->flag_1 = '#';
-		}
-		else if (flgs.grab)
-			tmp->flag2 = '#';
-	}
-	else if (flgs.plus)
-	{
-		tmp->flag = '+';
-		if (flgs.zero)
-			tmp->flag_1 = '0';
-	}
-	else if (flgs.zero)
-	{
-		tmp->flag = '0';
-		if (flgs.grab)
-			tmp->flag2 = '#';
-		else if (flgs.plus)
-			tmp->flag2 = '+';
-		else if (flgs.space)
-			tmp->flag2 = ' ';
-	}
-	else if (flgs.space)
-		tmp->flag = ' ';
-	else if (flgs.grab)
-	{
-		tmp->flag2 = '#';
-		if (flgs.zero)
-			tmp->flag = '0';
-	}
-}
-
-void				ft_crtflgs(int *i, t_var *tmp, const char *mas)
-{
-	t_flags	flgs;
-
-	flgs.minus = 0;
-	flgs.plus = 0;
-	flgs.space = 0;
-	flgs.zero = 0;
-	flgs.grab = 0;
-	while (mas[*i] == '-' || mas[*i] == '+'
-	|| mas[*i] == ' ' || mas[*i] == '#' || mas[*i] == '0')
-	{
-		if (mas[*i] == '-')
-			flgs.minus = 1;
-		else if (mas[*i] == '+')
-			flgs.plus = 1;
-		else if (mas[*i] == ' ')
-			flgs.space = 1;
-		else if (mas[*i] == '#')
-			flgs.grab = 1;
-		else if (mas[*i] == '0')
-			flgs.zero = 1;
-		(*i)++;
-	}
-	ft_crtflgs1(tmp, flgs);
 }
 
 t_var				*ft_srchflgs(t_var *tmp, int *i, const char *mas)

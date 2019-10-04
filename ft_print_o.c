@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 16:39:28 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:29:23 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/04 16:30:04 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 void	if_flag_zero3(t_var *tmp)
 {
+	/*
+	ft_putchar('|');
+	ft_putchar(tmp->flag);
+	ft_putchar(tmp->flag_1);
+	ft_putchar(tmp->flag2);
+	ft_putchar('|');
+*/
 	if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '?')
 		tmp->data = ft_strjoin("0", tmp->data);
 	if (!(tmp->precision == 0 && tmp->precision_flag == 1))
@@ -36,8 +43,8 @@ void	if_flag_zero3(t_var *tmp)
 		if (tmp->precision_flag == 1)
 			tmp->flag = '?';
 	}
-	if (tmp->flag == '0' && tmp->flag2 == '?' && tmp->flag_1 == '?')
-		tmp->data = ft_strjoin("0", tmp->data);
+/*	if (tmp->flag == '0' && tmp->flag2 == '?' && tmp->flag_1 == '?')
+		tmp->data = ft_strjoin("0", tmp->data);*/
 }
 
 void	if_flag_zero2(t_var *tmp)

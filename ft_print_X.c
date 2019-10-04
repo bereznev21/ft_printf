@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 18:17:29 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:24:47 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/04 15:24:36 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,23 +82,22 @@ char	*ft_print_x(t_var *tmp)
 {
 	int	flag_zero;
 
-	flag_zero = 0;
-	if ((int)ft_strlen(tmp->data) == 0)
-		flag_zero = 1;
+	flag_zero = ((int)ft_strlen(tmp->data) == 0) ? 1 : 0;
 	ft_flag_zero3(tmp, flag_zero);
-	if (tmp->precision_flag == 0 && (int)ft_strlen(tmp->data) == 0)
+	if (tmp->precision_flag == 0 && flag_zero == 1)
 	{
 		tmp->data = "0";
 		if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '0')
 			while (tmp->width > (int)ft_strlen(tmp->data))
 				tmp->data = ft_strjoin_left("0", tmp->data);
 	}
-	if (tmp->precision_flag == 1 && (int)ft_strlen(tmp->data) == 0)
+	if (tmp->precision_flag == 1 && flag_zero == 1)
 		if (tmp->flag == '0' && tmp->flag2 == '#' && tmp->flag_1 == '?')
 		{
 			tmp->flag = '?';
 			tmp->flag2 = '?';
-			tmp->data = "0";
+			if (tmp->precision > 0)
+				tmp->data = "0";
 		}
 	tmp->data = ft_print_d(tmp);
 	if (tmp->precision >= (int)ft_strlen(tmp->data) && flag_zero == 0)

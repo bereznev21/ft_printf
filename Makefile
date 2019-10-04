@@ -23,6 +23,7 @@ SRC = ft_printf.c \
 		ft_start_double.c \
 		ft_check.c \
 		ft_ntlstn.c \
+		ft_crtflgs.c \
 		ft_strjoin_char.c \
 		ft_strjoin_lr.c \
 		ft_get_d.c \

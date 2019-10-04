@@ -22,11 +22,26 @@ int	main(void)
 */
 
 
-//	printf("%5");
-//	ft_printf("%5");
+/*
+	%.0hd
+	%.hd
+	%18.0hd
+	1.0hd
+	%01.0hd
+	010.20hd
+	%018.0hd
+	18.0ld
+	%010.0lld
+	%+1llx
+*/
+	printf("|%010.0o|\n", 2147483648);
+	ft_printf("|%010.0o|\n", 2147483648);
 
-	printf("%1$s", NULL);
-	ft_printf("%1$s", NULL);
+	printf("|%01.0ho|\n", 2147483648);
+	ft_printf("|%01.0ho|\n", 2147483648);
+
+	printf("|%018.0ho|\n", 2147483648);
+	ft_printf("|%018.0ho|\n", 2147483648);
 
 	return (0);
 }
