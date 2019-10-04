@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 20:27:52 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:27:25 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/04 14:50:10 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_get_u(char *str1, t_var *tmp, va_list str)
 		nb = va_arg(str, size_t);
 	else
 		nb = va_arg(str, unsigned int);
+	if (nb == 0 && tmp->precision == 0 && tmp->precision_flag == 1)
+		return ("");
 	str1 = ft_ullitoa(nb, tmp);
 	return (str1);
 }

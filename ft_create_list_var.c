@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 23:24:26 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:26:40 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/03 23:10:25 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ int		ft_create_list_var(const char *mas, int i, va_list str)
 	str1 = 0;
 	tmp = (t_var*)malloc(sizeof(t_var));
 	tmp = ft_srchflgs(tmp, &i, mas);
+	/*if (!ft_check_type(mas[(i)]))
+		return (0);*/
+	/*if (mas[i] == '\0')
+		exit(0);*/
 	if (!ft_check_type(mas[(i)]) || mas[i] == '\0')
 		exit(0);
 	tmp->type = mas[i];
