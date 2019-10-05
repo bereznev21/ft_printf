@@ -34,6 +34,7 @@ int	main(void)
 	%010.0lld
 	%+1llx
 */
+/*
 	printf("|%010.0o|\n", 2147483648);
 	ft_printf("|%010.0o|\n", 2147483648);
 
@@ -74,9 +75,12 @@ int	main(void)
 	ft_printf("%f\n", 10.1);
 	
 //============================================
+*/
+	printf("%.5x\n", 42);
+	ft_printf("%.5x\n", 42);
 
-	printf("|%018.0ho|\n", 2147483648);
-	ft_printf("|%018.0ho|\n", 2147483648);
+	printf("%6.9x\n", 42);
+	ft_printf("%6.9x\n", 42);
 
 	return (0);
 }

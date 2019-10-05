@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:10:55 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:32:32 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/05 18:15:48 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_write(char *res)
 		ft_putchar(res[i++]);
 		len++;
 	}
+	//free(res);
 	return (len);
 }
 
@@ -49,5 +50,8 @@ int	ft_controller(t_var *tmp)
 		res = ft_print_x(tmp);
 	if (tmp->type == 'f')
 		res = ft_print_f(tmp);
+	//if (ft_strlen(tmp->data) != 0)
+	//	free(tmp->data);
+	//free(tmp);
 	return (ft_write(res));
 }

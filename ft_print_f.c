@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_f.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:37:01 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/03 21:55:35 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/10/05 15:40:22 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,6 @@ char	*ft_print_f(t_var *tmp)
 	if (tmp->arg_sign == -1 && tmp->flag == '0'
 		&& tmp->flag2 == '0' && tmp->flag_1 == '?')
 		if (tmp->width == (int)ft_strlen(tmp->data))
-			tmp->data = ft_strjoin_left("-", tmp->data);
+			tmp->data = ft_strjoin("-", tmp->data);
 	return (tmp->data);
 }
