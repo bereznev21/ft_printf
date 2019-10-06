@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:52:55 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/05 18:28:38 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 18:26:53 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ char	*ft_get_x(char *str1, t_var *tmp, va_list str)
 	{
 		nb = (unsigned int)va_arg(str, unsigned int);
 		if (!nb && !tmp->precision && tmp->flag == '?' && tmp->precision_flag)
-			return ("");
+			return (ft_strdup(""));
 	}
 	if (nb == 0 && tmp->type != 'p')
-		return ("");
+		return (ft_strdup(""));
 	str1 = ft_uitoa_base(nb, 16, tmp->type);
 	return (str1);
 }

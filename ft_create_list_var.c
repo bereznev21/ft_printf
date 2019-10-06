@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 23:24:26 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 17:00:29 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 17:23:20 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ int		ft_create_list_var(const char *mas, int i, va_list str)
 	if (!(tmp->data))
 		tmp->data = str1;
 	//free(str1);
-
 	return (ft_controller(tmp));
 }

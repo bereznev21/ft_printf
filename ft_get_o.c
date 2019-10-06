@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:52:11 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/04 16:28:25 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 18:26:15 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,12 @@ char	*ft_get_o(char *str1, t_var *tmp, va_list str)
 		nb = va_arg(str, unsigned int);
 	if (nb == 0)
 	{
-		/*
-	ft_putchar('|');
-	ft_putchar(tmp->flag);
-	ft_putchar(tmp->flag_1);
-	ft_putchar(tmp->flag2);
-	ft_putchar('|');
-	*/
 		if (tmp->precision == 0 && tmp->precision_flag == 1)
 		{
-			return ("");
+			return (ft_strdup(""));
 		}
 		if (tmp->flag2 == '#')
-			return ("");
+			return (ft_strdup(""));
 	}
 	str1 = ft_uitoa_base(nb, 8, tmp->type);
 	return (str1);

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:10:33 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 17:07:41 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 18:27:20 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,5 @@ t_var				*ft_srchflgs(t_var *tmp, int *i, const char *mas)
 			&& tmp->size1 != 'j' && tmp->size1 != 'z')
 			tmp->size2 = mas[(*i)++];
 	}
-	/*
-	ft_putchar('|');
-	ft_putchar(tmp->size1);
-	ft_putchar(tmp->size2);
-	ft_putchar('|');
-*/
 	return (tmp);
 }

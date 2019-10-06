@@ -43,7 +43,7 @@ all: $(NAME)
 
 $(NAME):
 	make -C libft
-	gcc -c  $(SRC) -I libft
+	gcc -c $(SRC) -I libft
 	@cp libft/libft.a ./$(NAME)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)

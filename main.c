@@ -21,7 +21,13 @@ int	main(void)
 	ft_putchar('|');
 */
 
-
+/*
+	ft_putchar('!');
+	ft_putchar(mas[i]);
+	ft_putchar(tmp->size1);
+	ft_putchar(tmp->size2);
+	ft_putchar('!');
+*/
 /*
 	%.0hd
 	%.hd
@@ -77,11 +83,11 @@ int	main(void)
 //============================================
 */
 
-	printf("%LLf\n", 42.5);
-	ft_printf("%LLf\n", 42.5);
+//	printf("|%LLf|\n", 42.5);
+//	ft_printf("|%LLf|\n", 42.5);
 
-	printf("%lLf\n", 42.5);
-	ft_printf("%lLf\n", 42.5);
+	printf("|%lLf|\n", 42.5);
+	ft_printf("|%Lf|\n", 42.5);
 
 /*
 	printf("%%\n");
