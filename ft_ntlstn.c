@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:10:33 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/03 20:20:06 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 17:02:38 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ t_var				*ft_ntlstn_var(t_var *tmp)
 	tmp->flag_1 = '?';
 	tmp->precision = 0;
 	tmp->precision_flag = 0;
-	tmp->size1 = '0';
-	tmp->size2 = '0';
+	tmp->size1 = '?';
+	tmp->size2 = '?';
 	return (tmp);
 }
 

@@ -67,7 +67,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		arr[i + j] = '\0';
 		return (arr);
 	}
-	//free (arr);
+	free (arr);
 	return (NULL);
 }
 
@@ -79,7 +79,7 @@ int		main()
 
 //	s1 = ft_strdup("1234");
 	s2 = ft_strdup("5678");
-	res = ft_strjoin(" ", s2);
+	res = ft_strjoin("0", s2);
 	free(s2);
 	ft_putstr(res);
 	free(res);

@@ -76,11 +76,28 @@ int	main(void)
 	
 //============================================
 */
-	printf("%.5x\n", 42);
-	ft_printf("%.5x\n", 42);
 
-	printf("%6.9x\n", 42);
-	ft_printf("%6.9x\n", 42);
+	printf("%LLf\n", 42.5);
+	ft_printf("%LLf", 42.5);
 
+/*
+	printf("%%\n");
+	ft_printf("%%\n");
+
+	printf("aa%%bb\n");
+	ft_printf("aa%%bb\n");
+
+	printf("%%%%%%%%%%\n");
+	ft_printf("%%%%%%%%%%\n");
+
+	printf(".%%.%%.%%.%%.%%.%%.%%.%%.\n");
+	ft_printf(".%%.%%.%%.%%.%%.%%.%%.%%.\n");
+*/
+/*	printf("%.0p, %.p\n", (void*)0, (void*)0);
+	ft_printf("%.0p, %.p\n", (void*)0, (void*)0);
+
+	printf("%.0x, %.x\n", 0, 0);
+	ft_printf("%.0x, %.x\n", 0, 0);
+*/
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:35:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/05 17:27:31 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 16:58:57 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,15 @@ int			ft_ifprecent(const char *format, va_list str, int *i)
 
 	len = 0;
 	len = ft_create_list_var(format, ++(*i), str);
-	while (!ft_check_type(format[*i]) && format[*i] != '\0')
+	while (format[*i] == ' ' || (format[*i] >= '0' && format[*i] <= '9')
+	|| format[*i] == '#' || format[*i] == '-' || format[*i] == '+'
+	|| format[*i] == '.' || format[*i] == 'h' || format[*i] == 'l'
+	|| format[*i] == 'L')
 		(*i)++;
-	(*i)++;
+	if (ft_check_type(format[*i]))
+		(*i)++;
+	else
+		return (0);
 	return (len);
 }
 

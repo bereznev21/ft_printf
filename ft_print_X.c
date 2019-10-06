@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 18:17:29 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/04 15:24:36 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 13:48:22 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,17 @@ char	*ft_print_x(t_var *tmp)
 				tmp->data = ft_strjoin_left("0", tmp->data);
 	}
 	if (tmp->precision_flag == 1 && flag_zero == 1)
+	{
 		if (tmp->flag == '0' && tmp->flag2 == '#' && tmp->flag_1 == '?')
 		{
 			tmp->flag = '?';
 			tmp->flag2 = '?';
-			if (tmp->precision > 0)
+			if (tmp->precision != 0)
 				tmp->data = "0";
 		}
+		if (tmp->precision == 0 && tmp->type == 'p')
+			ft_ox(tmp);
+	}
 	tmp->data = ft_print_d(tmp);
 	if (tmp->precision >= (int)ft_strlen(tmp->data) && flag_zero == 0)
 		if (tmp->flag == '0' && tmp->flag2 == '#' && tmp->flag_1 == '?')
