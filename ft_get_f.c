@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:49:47 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:27:07 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 20:08:52 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_get_f(char *str1, t_var *tmp, va_list str)
 	if (tmp->size1 == 'l')
 		str1 = ft_start_double(va_arg(str, double), tmp);
 	else if (tmp->size1 == 'L')
-		str1 = ft_start_double(va_arg(str, long double), tmp);
+		str1 = ft_start_double((long double)va_arg(str, long double), tmp);
 	else
 		str1 = ft_start_double(va_arg(str, double), tmp);
 	return (str1);
