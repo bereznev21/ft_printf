@@ -78,7 +78,10 @@ int	main(void)
 */
 
 	printf("%LLf\n", 42.5);
-	ft_printf("%LLf", 42.5);
+	ft_printf("%LLf\n", 42.5);
+
+	printf("%lLf\n", 42.5);
+	ft_printf("%lLf\n", 42.5);
 
 /*
 	printf("%%\n");

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:35:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 16:58:57 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 17:09:27 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int			ft_ifprecent(const char *format, va_list str, int *i)
 	while (format[*i] == ' ' || (format[*i] >= '0' && format[*i] <= '9')
 	|| format[*i] == '#' || format[*i] == '-' || format[*i] == '+'
 	|| format[*i] == '.' || format[*i] == 'h' || format[*i] == 'l'
-	|| format[*i] == 'L')
+	|| format[*i] == 'L' || format[*i] == 'j' || format[*i] == 'z')
 		(*i)++;
 	if (ft_check_type(format[*i]))
 		(*i)++;
