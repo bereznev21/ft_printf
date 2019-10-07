@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 16:10:08 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:26:38 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,16 @@ char	*ft_crop_str(char *str, int len, int crop)
 
 void	ft_print_s(t_var *s)
 {
-	char	*str;
 	int		wdth;
 	int		len;
 
 	wdth = (s->width > 0) ? s->width : 0;
-	//if (!(s->data) && s->type == 'c')
-	//	return (0);
 	s->data = (!(s->data)) ? ft_strdup("(null)") : s->data;
 	if (s->precision == 0 && s->precision_flag == 1 && s->type == 's')
 		s->data = ft_strdup("");
 	len = ft_strlen(s->data);
 	len = (s->arg_sign == -1 || s->flag2 == '+') ? len-- : len;
 	s->precision = (s->precision >= len) ? 0 : s->precision;
-	if (!(str = ft_strnew(wdth)))
-		exit(0);
 	if (s->precision)
 	{
 		s->data = ft_crop_str(s->data, len, s->precision);

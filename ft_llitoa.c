@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:23:56 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:27:44 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:52:24 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char		*ft_llitoa(long long int nb, t_var *tmp)
 	size_t			buf;
 
 	if (nb == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	tmp->arg_sign = (nb < 0) ? -1 : 1;
 	nb = (nb > 0) ? nb : nb * (-1);
 	buf = 1;

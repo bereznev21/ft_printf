@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:10:55 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 16:07:07 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:52:34 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_write(t_var *tmp)
 		ft_putchar(tmp->data[i++]);
 		len++;
 	}
+	free(tmp->data);
 	free(tmp);
 	return (len);
 }
