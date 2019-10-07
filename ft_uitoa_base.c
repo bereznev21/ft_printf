@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 14:02:25 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 14:46:40 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 14:56:31 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ char			*ft_uitoa_base(uintmax_t value, int base, char type)
 	}
 	ret[taille] = '\0';
 	//if (type == 'X')
-		free(tab_base);
+	free(tab_base);
+	//free(sign);
 	return (ret);
 }
