@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:10:55 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 17:23:35 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 23:55:05 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_write(char *res)
 int	ft_controller(t_var *tmp)
 {
 	char *res;
-
+	//res = ft_strdup("");
 	if (tmp->type == '%')
 		res = ft_print_c(tmp);
 	else if (tmp->type == 'c')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 18:12:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/03 19:51:36 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/10/06 23:43:18 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char			*ft_itoa_base(intmax_t value, int base, t_var *tmp)
 	if (base < 2 || base > 16)
 		return (0);
 	if (value == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	ft_alf_maker(tab_base, tmp->type);
 	taille = digit_count(value, base) + sign;
 	if (!(ret = ft_strnew((size_t)taille)))

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 22:47:02 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 15:17:47 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 23:29:46 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ char				*ft_create_xi(char *s, unsigned int n, int sz);
 char				*ft_get_d(char *str1, t_var *tmp, va_list str);
 char				*ft_get_f(char *str1, t_var *tmp, va_list str);
 char				*ft_get_c(char *str1, t_var *tmp, va_list str);
+char				*ft_get_s(char *str1, t_var *tmp, va_list str);
 char				*ft_get_u(char *str1, t_var *tmp, va_list str);
 char				*ft_get_x(char *str1, t_var *tmp, va_list str);
 char				*ft_get_o(char *str1, t_var *tmp, va_list str);

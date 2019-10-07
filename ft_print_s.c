@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/05 15:39:03 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 14:21:57 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*ft_fil_whitespaces(t_var *s, int wdth, int len)
 	i = 0;
 	if (s->flag != '0')
 		while (wdth - len > i++)
-			//s->data = ft_strjoin_left(" ", s->data);
 			//s->data = ft_strjoin_left(" ", s->data);
 			s->data = ft_strjoin(" ", s->data);
 	else
@@ -65,9 +64,9 @@ char	*ft_print_s(t_var *s)
 	wdth = (s->width > 0) ? s->width : 0;
 	if (!(s->data) && s->type == 'c')
 		return (0);
-	s->data = (!(s->data)) ? "(null)" : s->data;
+	s->data = (!(s->data)) ? ft_strdup("(null)") : s->data;
 	if (s->precision == 0 && s->precision_flag == 1 && s->type == 's')
-		s->data = "";
+		s->data = ft_strdup("");
 	len = ft_strlen(s->data);
 	len = (s->arg_sign == -1 || s->flag2 == '+') ? len-- : len;
 	s->precision = (s->precision >= len) ? 0 : s->precision;
@@ -81,7 +80,7 @@ char	*ft_print_s(t_var *s)
 	if (s->width && s->width > (int)ft_strlen(s->data))
 		s->data = (s->flag != '-') ? ft_fil_whitespaces(s, wdth, len) :
 		ft_end_whitespaces(s, wdth, len);
-	str = ft_strjoin(str, s->data);
+	str = ft_strjoin_right(str, s->data);
 	//ft_free_str(&s->data);
 	//free(s->data);
 	return (str);

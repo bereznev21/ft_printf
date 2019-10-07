@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:35:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 17:23:08 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 23:29:17 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_create_arg_string(char *str1, t_var *tmp, va_list str)
 	if (tmp->type == 'c' || tmp->type == '%')
 		str1 = ft_get_c(str1, tmp, str);
 	else if (tmp->type == 's')
-		str1 = va_arg(str, char*);
+		str1 = ft_get_s(str1, tmp, str);
 	else if (tmp->type == 'd' || tmp->type == 'i')
 		str1 = ft_get_d(str1, tmp, str);
 	else if (tmp->type == 'u' || tmp->type == 'U')

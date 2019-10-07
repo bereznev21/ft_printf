@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 20:29:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/05 18:18:07 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/06 23:42:31 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_get_d(char *str1, t_var *tmp, va_list str)
 	else
 		nb = va_arg(str, int);
 	if (nb == 0 && tmp->precision == 0 && tmp->precision_flag == 1)
-		return ("");
+		return (ft_strdup(""));
 	str1 = ft_llitoa(nb, tmp);
 	return (str1);
 }

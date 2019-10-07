@@ -84,7 +84,7 @@ int	main(void)
 */
 
 	//printf("|%Lf|\n", 42.5);
-	ft_printf("|%Lf|\n", 42.5);
+	//ft_printf("|%Lf|\n", 42.5);
 
 	//printf("|%Lf|\n", 42.5);
 	//ft_printf("|%Lf|\n", 42.5);
@@ -108,5 +108,11 @@ int	main(void)
 	printf("%.0x, %.x\n", 0, 0);
 	ft_printf("%.0x, %.x\n", 0, 0);
 */
+	//ft_printf("%c\n", 'a');
+	//ft_printf("hello, %s.", "gavin");
+	//ft_printf("this %x number", 0);
+	ft_printf("%x\n", 10);
+
 	return (0);
 }
+ 
