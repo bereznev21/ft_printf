@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 18:17:29 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 15:54:37 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 17:38:43 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,4 @@ void	ft_print_x(t_var *tmp)
 	if (tmp->precision >= (int)ft_strlen(tmp->data) && flag_zero == 0)
 		if (tmp->flag == '0' && tmp->flag2 == '#' && tmp->flag_1 == '?')
 			ft_ox(tmp);
-//	return (tmp->data);
 }

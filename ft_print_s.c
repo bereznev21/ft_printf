@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 16:26:38 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 17:45:13 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@ char	*ft_fil_whitespaces(t_var *s, int wdth, int len)
 	i = 0;
 	if (s->flag != '0')
 		while (wdth - len > i++)
-			//s->data = ft_strjoin_left(" ", s->data);
-			s->data = ft_strjoin(" ", s->data);
+			s->data = ft_strjoin_left(" ", s->data);
 	else
 		while (wdth - len > i++)
-			//s->data = ft_strjoin_left("0", s->data);
-			s->data = ft_strjoin("0", s->data);
+			s->data = ft_strjoin_left("0", s->data);
 	return (s->data);
 }
 
@@ -35,8 +33,7 @@ char	*ft_end_whitespaces(t_var *s, int wdth, int len)
 
 	i = 0;
 	while (wdth - len > i++)
-		//s->data = ft_strjoin_right(s->data, " ");
-		s->data = ft_strjoin(s->data, " ");
+		s->data = ft_strjoin_right(s->data, " ");
 	return (s->data);
 }
 

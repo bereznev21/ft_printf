@@ -114,9 +114,9 @@ int	main(void)
 	//ft_printf("%x\n", 10);
 
 	//ft_printf("%x\n", 1000);
-	//ft_printf("%7x", 33);
+	ft_printf("%7x", 33);
 	//ft_printf("%32s", "abc");
-	ft_printf("%d", 0);
+	//ft_printf("%d", 0);
 	return (0);
 }
  
