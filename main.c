@@ -111,8 +111,11 @@ int	main(void)
 	//ft_printf("%c\n", 'a');
 	//ft_printf("hello, %s.", "gavin");
 	//ft_printf("this %x number", 0);
-	ft_printf("%x\n", 10);
+	//ft_printf("%x\n", 10);
 
+	//ft_printf("%x\n", 1000);
+	//ft_printf("%7x", 33);
+	ft_printf("%32s", "abc");
 	return (0);
 }
  

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 14:21:57 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:10:08 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ char	*ft_fil_whitespaces(t_var *s, int wdth, int len)
 			s->data = ft_strjoin(" ", s->data);
 	else
 		while (wdth - len > i++)
-//			s->data = ft_strjoin_left("0", s->data);
+			//s->data = ft_strjoin_left("0", s->data);
 			s->data = ft_strjoin("0", s->data);
-	//if (s->data)
-	//ft_strdel(&s->data);
 	return (s->data);
 }
 
@@ -55,15 +53,15 @@ char	*ft_crop_str(char *str, int len, int crop)
 	return (str);
 }
 
-char	*ft_print_s(t_var *s)
+void	ft_print_s(t_var *s)
 {
 	char	*str;
 	int		wdth;
 	int		len;
 
 	wdth = (s->width > 0) ? s->width : 0;
-	if (!(s->data) && s->type == 'c')
-		return (0);
+	//if (!(s->data) && s->type == 'c')
+	//	return (0);
 	s->data = (!(s->data)) ? ft_strdup("(null)") : s->data;
 	if (s->precision == 0 && s->precision_flag == 1 && s->type == 's')
 		s->data = ft_strdup("");
@@ -80,8 +78,4 @@ char	*ft_print_s(t_var *s)
 	if (s->width && s->width > (int)ft_strlen(s->data))
 		s->data = (s->flag != '-') ? ft_fil_whitespaces(s, wdth, len) :
 		ft_end_whitespaces(s, wdth, len);
-	str = ft_strjoin_right(str, s->data);
-	//ft_free_str(&s->data);
-	//free(s->data);
-	return (str);
 }

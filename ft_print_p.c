@@ -6,15 +6,14 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:13:29 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 13:37:38 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:11:16 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_print_p(t_var *tmp)
+void	ft_print_p(t_var *tmp)
 {
 	tmp->flag2 = '#';
-	tmp->data = ft_print_x(tmp);
-	return (tmp->data);
+	ft_print_x(tmp);
 }

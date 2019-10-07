@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:37:01 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 20:30:48 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:11:51 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_dot(t_var *tmp)
 	}
 }
 
-char	*ft_print_f(t_var *tmp)
+void	ft_print_f(t_var *tmp)
 {
 	if (tmp->arg_sign == -1)
 		ft_ngtv_argsgn(tmp);
@@ -78,11 +78,9 @@ char	*ft_print_f(t_var *tmp)
 		tmp->precision = tmp->width;
 	}
 	ft_dot(tmp);
-	//if (tmp->size1 != 'L')
-		tmp->data = ft_print_d(tmp);
+	ft_print_d(tmp);
 	if (tmp->arg_sign == -1 && tmp->flag == '0'
 		&& tmp->flag2 == '0' && tmp->flag_1 == '?')
 		if (tmp->width == (int)ft_strlen(tmp->data))
 			tmp->data = ft_strjoin("-", tmp->data);
-	return (tmp->data);
 }

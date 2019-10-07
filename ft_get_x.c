@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 13:52:55 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 14:43:30 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:09:32 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ char	*ft_get_x(char *str1, t_var *tmp, va_list str)
 	}
 	if (nb == 0 && tmp->type != 'p')
 		return (ft_strdup(""));
-	//str1 = ft_strdup("");
 	str1 = ft_uitoa_base(nb, 16, tmp->type);
 	return (str1);
 }

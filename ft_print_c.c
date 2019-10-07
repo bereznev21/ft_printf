@@ -6,17 +6,17 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:27:43 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:28:02 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 15:58:19 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_print_c(t_var *s)
+void	ft_print_c(t_var *s)
 {
 	char	*str;
 
 	s->width = (s->data > 0) ? s->width : 0;
-	str = ft_print_s(s);
-	return (str);
+	ft_print_s(s);
+//	return (str);
 }

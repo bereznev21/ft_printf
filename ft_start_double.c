@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:17:18 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 20:34:05 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:15:20 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ long double n, int precision)
 	tmp.power = 1;
 	tmp.mantisa_len = 0;
 	tmp.res = ft_strdup("");
-	//tmp.res = 0;
 	while (num > 10)
 	{
 		num = num / 10;

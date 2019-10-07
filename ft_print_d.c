@@ -6,13 +6,13 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:43:57 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:24:29 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:12:00 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_print_d(t_var *tmp)
+void	ft_print_d(t_var *tmp)
 {
 	if (tmp->arg_sign == -1)
 	{
@@ -171,5 +171,4 @@ char	*ft_print_d(t_var *tmp)
 				tmp->data = ft_strjoin_left("-", tmp->data);
 		}
 	}
-	return (tmp->data);
 }

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 22:47:02 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/06 23:29:46 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/07 15:59:10 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,22 +58,21 @@ typedef struct		s_float_struct
 }					t_float_struct;
 
 int					ft_printf(const char *format, ...);
-char				*ft_print_c(t_var *s);
-char				*ft_print_s(t_var *s);
-char				*ft_print_p(t_var *s);
-char				*ft_print_pc(t_var *s);
+void				ft_print_c(t_var *s);
+void				ft_print_s(t_var *s);
+void				ft_print_p(t_var *s);
 char				*ft_llitoa(long long int n, t_var *tmp);
 char				*ft_ullitoa(uintmax_t nb, t_var *tmp);
-char				*ft_print_d(t_var *s);
+void				ft_print_d(t_var *s);
 void				ft_if_ngtv_rgsgn_prcsn_0(t_var *tmp);
 void				ft_if_ngtv_rgsgn_prcsn_1(t_var *tmp);
 void				ft_if_pstv_rgsgn_prcsn_0(t_var *tmp);
 void				ft_if_pstv_rgsgn_prcsn_1(t_var *tmp);
 void				ft_if_pstv_rgsgn(t_var *tmp);
-char				*ft_print_o(t_var *s);
-char				*ft_print_u(t_var *s);
-char				*ft_print_x(t_var *s);
-char				*ft_print_f(t_var *s);
+void				ft_print_o(t_var *s);
+void				ft_print_u(t_var *s);
+void				ft_print_x(t_var *s);
+void				ft_print_f(t_var *s);
 char				*ft_print_pc(t_var *s);
 int					ft_controller(t_var *tmp);
 int					ft_create_list_var(const char *mas, int i, va_list str);

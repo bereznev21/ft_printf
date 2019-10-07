@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_o.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 16:39:28 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/04 17:15:00 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:11:33 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 void	if_flag_zero3(t_var *tmp)
 {
-	/*
-	ft_putchar('|');
-	ft_putchar(tmp->flag);
-	ft_putchar(tmp->flag_1);
-	ft_putchar(tmp->flag2);
-	ft_putchar('|');
-*/
 	if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '?')
 		tmp->data = ft_strjoin_left("0", tmp->data);
 	if (!(tmp->precision == 0 && tmp->precision_flag == 1))
@@ -43,9 +36,6 @@ void	if_flag_zero3(t_var *tmp)
 		if (tmp->precision_flag == 1)
 			tmp->flag = '?';
 	}
-
-/*	if (tmp->flag == '0' && tmp->flag2 == '?' && tmp->flag_1 == '?')
-		tmp->data = ft_strjoin("0", tmp->data);*/
 }
 
 void	if_flag_zero2(t_var *tmp)
@@ -94,7 +84,7 @@ void	if_flag_zero1(t_var *tmp)
 	if_flag_zero2(tmp);
 }
 
-char	*ft_print_o(t_var *tmp)
+void	ft_print_o(t_var *tmp)
 {
 	int flag_zero;
 
@@ -105,6 +95,5 @@ char	*ft_print_o(t_var *tmp)
 		if_flag_zero1(tmp);
 	if (flag_zero == 1)
 		if_flag_zero3(tmp);
-	tmp->data = ft_print_d(tmp);
-	return (tmp->data);
+	ft_print_d(tmp);
 }
