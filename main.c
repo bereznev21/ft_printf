@@ -44,19 +44,19 @@ int	main(void)
 	//printf("|%010.0o|\n", 2147483648);
 	//ft_printf("|%010.0o|\n", 2147483648);
 
-	printf("|%01.0ho|\n", 2147483648);
-	ft_printf("|%01.0ho|\n", 2147483648);
+	//printf("|%01.0ho|\n", 2147483648);
+	//ft_printf("|%01.0ho|\n", 2147483648);
 
 	int *a;
 	*a = 10;
 
-	printf("%%\n");
-	ft_printf("%%\n");
+	//printf("%%\n");
+	//ft_printf("%%\n");
 	
-	printf("%c\n", 'a');
-	ft_printf("%c\n", 'a');
+//	printf("%c\n", 'a');
+//	ft_printf("%c\n", 'a');
 	
-	printf("%s\n", "Hellow World!");
+/*	printf("%s\n", "Hellow World!");
 	ft_printf("%s\n", "Hellow World!");
 	
 	printf("%p\n", a);
@@ -79,7 +79,7 @@ int	main(void)
 
 	printf("%f\n", 10.1);
 	ft_printf("%f\n", 10.1);
-	
+*/
 //============================================
 
 
@@ -119,7 +119,7 @@ int	main(void)
 	//ft_printf("%d", 0);
 
 
-
+/*
 	ft_printf("1   ||\n");
 	ft_printf("2   |%%|\n");
 	ft_printf("3   |%d|\n", 42);
@@ -150,6 +150,9 @@ int	main(void)
 	ft_printf("28  |%s%s|\n", "test", "test");
 	ft_printf("29  |%s%s%s|\n", "test", "test", "test");
 	ft_printf("30  |%C|\n", 15000);
+	*/
+	ft_printf("26  |%s|\n", NULL);
+
 	return (0);
 }
  
