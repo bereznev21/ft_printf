@@ -117,6 +117,9 @@ int	main(void)
 	//ft_printf("%7x", 33);
 	//ft_printf("%32s", "abc");
 	//ft_printf("%d", 0);
+
+
+
 	ft_printf("1   ||\n");
 	ft_printf("2   |%%|\n");
 	ft_printf("3   |%d|\n", 42);
