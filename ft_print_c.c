@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:27:43 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 19:42:20 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 21:10:43 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void	ft_print_c(t_var *s)
 
 	s->width = (s->data > 0) ? s->width : 0;
 	ft_print_s(s);
-//	return (str);
 }

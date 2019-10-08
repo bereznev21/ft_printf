@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 20:27:52 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 15:41:38 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 21:18:50 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,10 @@ char	*ft_get_u(char *str1, t_var *tmp, va_list str)
 		else
 			nb = va_arg(str, unsigned long);
 	}
+	else if (tmp->size1 == 'h' && tmp->size2 == 'h')
+		nb = (unsigned char)va_arg(str, unsigned int);
 	else if (tmp->size1 == 'h')
-	{
-		if (tmp->size2 == 'h')
-			nb = (unsigned char)va_arg(str, unsigned int);
-		else
-			nb = (unsigned short int)va_arg(str, unsigned int);
-	}
+		nb = (unsigned short int)va_arg(str, unsigned int);
 	else if (tmp->size1 == 'j')
 		nb = va_arg(str, uintmax_t);
 	else if (tmp->size1 == 'z')

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 23:24:26 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 20:31:47 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 21:32:09 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ int		ft_zero_char(t_var *tmp, char *str1)
 	return (nul);
 }
 
+int		ft_free_mas(t_var *tmp)
+{
+	free(tmp->data);
+	free(tmp);
+	return (0);
+}
+
 int		ft_create_list_var(const char *mas, int i, va_list str)
 {
 	char	*str1;
@@ -48,11 +55,7 @@ int		ft_create_list_var(const char *mas, int i, va_list str)
 	tmp = (t_var*)malloc(sizeof(t_var));
 	tmp = ft_srchflgs(tmp, &i, mas);
 	if (!ft_check_type(mas[(i)]) || mas[i] == '\0')
-	{
-		free(tmp->data);
-		free(tmp);
-		return (0);
-	}
+		return (ft_free_mas(tmp));
 	tmp->type = mas[i];
 	if (mas[i] == '%')
 	{
@@ -67,7 +70,7 @@ int		ft_create_list_var(const char *mas, int i, va_list str)
 	if (str1 == 0 && tmp->type == 'c')
 		return (ft_zero_char(tmp, str1));
 	if (!(tmp->data))
-		tmp->data = strdup(str1);
+		tmp->data = ft_strdup(str1);
 	free(str1);
 	return (ft_controller(tmp));
 }

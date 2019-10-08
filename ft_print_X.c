@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 18:17:29 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 17:38:43 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 21:23:47 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,13 @@ void	ft_flag_zero3(t_var *tmp, int flag_zero)
 			if (tmp->precision_flag == 0)
 				ft_ox(tmp);
 	}
+	if (tmp->precision_flag == 0 && flag_zero == 1)
+	{
+		tmp->data = ft_strjoin_left("0", tmp->data);
+		if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '0')
+			while (tmp->width > (int)ft_strlen(tmp->data))
+				tmp->data = ft_strjoin_left("0", tmp->data);
+	}
 }
 
 void	ft_print_x(t_var *tmp)
@@ -84,13 +91,6 @@ void	ft_print_x(t_var *tmp)
 
 	flag_zero = ((int)ft_strlen(tmp->data) == 0) ? 1 : 0;
 	ft_flag_zero3(tmp, flag_zero);
-	if (tmp->precision_flag == 0 && flag_zero == 1)
-	{
-		tmp->data = ft_strjoin_left("0", tmp->data);
-		if (tmp->flag == '?' && tmp->flag2 == '#' && tmp->flag_1 == '0')
-			while (tmp->width > (int)ft_strlen(tmp->data))
-				tmp->data = ft_strjoin_left("0", tmp->data);
-	}
 	if (tmp->precision_flag == 1 && flag_zero == 1)
 	{
 		if (tmp->flag == '0' && tmp->flag2 == '#' && tmp->flag_1 == '?')

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 14:02:25 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 16:14:25 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 21:37:05 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ char			*ft_uitoa_base(uintmax_t value, int base, char type)
 		return (ft_strdup("0"));
 	tab_base = (type == 'X') ? ft_strdup("0123456789ABCDEF") :
 	ft_strdup("0123456789abcdef");
-	taille = udigit_count(value, base);
-	taille += (sign ? 1 : 0);
+	taille = udigit_count(value, base) + (sign ? 1 : 0);
 	ret = (char *)malloc(sizeof(char) * (taille + 1));
 	i = 1;
 	sign ? (ret[0] = '-') : 0;

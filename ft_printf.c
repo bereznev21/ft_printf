@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:35:51 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 16:18:31 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 21:21:42 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 char		*ft_create_arg_string(char *str1, t_var *tmp, va_list str)
 {
-	//char	*res;
-
-	//res = ft_strdup("");
 	if (tmp->type == 'c' || tmp->type == '%')
 		str1 = ft_get_c(str1, tmp, str);
 	else if (tmp->type == 's')
@@ -33,9 +30,6 @@ char		*ft_create_arg_string(char *str1, t_var *tmp, va_list str)
 		str1 = ft_get_x(str1, tmp, str);
 	else if (tmp->type == 'p')
 		str1 = ft_get_p(str1, tmp, str);
-	//str1 = ft_strjoin_left(res, str1);
-	//free(res);
-	//free(str);
 	return (str1);
 }
 

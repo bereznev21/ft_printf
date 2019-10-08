@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:17:18 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 21:01:22 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 21:46:48 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ long double n, int precision)
 	num = n;
 	tmp.power = 1;
 	tmp.mantisa_len = 0;
-	tmp.res = ft_strdup("");
 	while (num > 10)
 	{
 		num = num / 10;
@@ -99,9 +98,8 @@ char			*ft_start_double(long double n, t_var *var_struct)
 		}
 		if ((long long int)tmp.mantisa > 0)
 		{
-			str = tmp.res;
-			tmp.res = ft_strjoin_left(tmp.res,
-			ft_ullitoa((uintmax_t)tmp.mantisa, var_struct));
+			str = ft_ullitoa((uintmax_t)tmp.mantisa, var_struct);
+			tmp.res = ft_strjoin_right(tmp.res, str);
 			free(str);
 		}
 	}
