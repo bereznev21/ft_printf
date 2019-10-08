@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 17:45:13 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 15:37:11 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	ft_print_s(t_var *s)
 	int		len;
 
 	wdth = (s->width > 0) ? s->width : 0;
-	s->data = (!(s->data)) ? ft_strdup("(null)") : s->data;
 	if (s->precision == 0 && s->precision_flag == 1 && s->type == 's')
 		s->data = ft_strdup("");
 	len = ft_strlen(s->data);
