@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:37:01 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 16:11:51 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 19:23:21 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,5 @@ void	ft_print_f(t_var *tmp)
 	if (tmp->arg_sign == -1 && tmp->flag == '0'
 		&& tmp->flag2 == '0' && tmp->flag_1 == '?')
 		if (tmp->width == (int)ft_strlen(tmp->data))
-			tmp->data = ft_strjoin("-", tmp->data);
+			tmp->data = ft_strjoin_left("-", tmp->data);
 }
