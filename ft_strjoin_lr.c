@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 06:21:19 by tlynesse          #+#    #+#             */
-/*   Updated: 2019/10/04 19:14:24 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 20:51:50 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 char	*ft_free_str(char **s)
 {
-	if (ft_strlen(*s) > 1)
+	if (*s)
 		free((void *)*s);
-	*s = 0;
 	return (0);
 }
 
