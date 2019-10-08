@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 20:20:30 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 21:14:52 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 23:17:26 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void				ft_crtflgs(int *i, t_var *tmp, const char *mas)
 	flgs.space = 0;
 	flgs.zero = 0;
 	flgs.grab = 0;
-	while (mas[*i] == '-' || mas[*i] == '+'
-	|| mas[*i] == ' ' || mas[*i] == '#' || mas[*i] == '0')
+	while (mas[*i] == '-' || mas[*i] == '+' || mas[*i] == ' '
+	|| mas[*i] == '#' || mas[*i] == '0' || mas[*i] == '*')
 	{
 		if (mas[*i] == '-')
 			flgs.minus = 1;
