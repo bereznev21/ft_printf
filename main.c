@@ -43,7 +43,7 @@ int	main(void)
 
 	//printf("|%010.0o|\n", 2147483648);
 	//ft_printf("|%010.0o|\n", 2147483648);
-/*
+
 	printf("|%01.0ho|\n", 2147483648);
 	ft_printf("|%01.0ho|\n", 2147483648);
 
@@ -76,7 +76,7 @@ int	main(void)
 	
 	printf("%X\n", 10);
 	ft_printf("%X\n", 10);
-*/
+
 	printf("%f\n", 10.1);
 	ft_printf("%f\n", 10.1);
 	

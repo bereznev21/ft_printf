@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:17:18 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 15:47:35 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 15:49:32 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,4 +107,3 @@ char			*ft_start_double(long double n, t_var *var_struct)
 	}
 	return (tmp.res);
 }
-open 
