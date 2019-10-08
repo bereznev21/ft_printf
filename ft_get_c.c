@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 20:27:04 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/02 22:26:07 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 18:05:13 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ char	*ft_get_c(char *str1, t_var *tmp, va_list str)
 	str1[0] = (char)c;
 	str1[1] = '\0';
 	if (c == 0)
+	{
+		free(str1);
 		str1 = nul;
+	}
 	return (str1);
 }

@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 23:24:26 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 16:31:01 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 18:05:53 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,10 @@ int		ft_create_list_var(const char *mas, int i, va_list str)
 	str1 = ft_create_arg_string(str1, tmp, str);
 	if (!str)
 		str1 = 0;
-	if (!(tmp->data))
-		tmp->data = ft_strdup(str1);
 	if (str1 == 0 && tmp->type == 'c')
 		return (ft_zero_char(tmp, str1));
-	else
-		free(str1);
+	if (!(tmp->data))
+		tmp->data = ft_strdup(str1);
+	free(str1);
 	return (ft_controller(tmp));
 }

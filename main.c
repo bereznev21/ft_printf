@@ -151,7 +151,8 @@ int	main(void)
 	ft_printf("29  |%s%s%s|\n", "test", "test", "test");
 	ft_printf("30  |%C|\n", 15000);
 	*/
-	ft_printf("26  |%s|\n", NULL);
+	//printf("%-5c\n", 0);
+	ft_printf("%-5c", 0);
 
 	return (0);
 }
