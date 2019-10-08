@@ -114,9 +114,39 @@ int	main(void)
 	//ft_printf("%x\n", 10);
 
 	//ft_printf("%x\n", 1000);
-	ft_printf("%7x", 33);
+	//ft_printf("%7x", 33);
 	//ft_printf("%32s", "abc");
 	//ft_printf("%d", 0);
+	ft_printf("1   ||\n");
+	ft_printf("2   |%%|\n");
+	ft_printf("3   |%d|\n", 42);
+	ft_printf("4   |%d%d|\n", 42, 41);
+	ft_printf("5   |%d%d%d|\n", 42, 43, 44);
+	ft_printf("6   |%ld|\n", 2147483647);
+	ft_printf("7   |%lld|\n", 9223372036854775807);
+	ft_printf("8   |%x|\n", 505);
+	ft_printf("9   |%X|\n", 505);
+	ft_printf("10  |%p|\n", &ft_printf);
+	ft_printf("11  |%20.15d|\n", 54321);
+	ft_printf("12  |%-10d|\n", 3);
+	ft_printf("13  |% d|\n", 3);
+	ft_printf("14  |%+d|\n", 3);
+	ft_printf("15  |%010d|\n", 1);
+	ft_printf("16  |%hhd|\n", 0);
+	ft_printf("17  |%jd|\n", 9223372036854775807);
+	ft_printf("18  |%zd|\n", 4294967295);
+	ft_printf("19  |%|\n");
+	ft_printf("20  |%U|\n", 4294967295);
+	ft_printf("21  |%u|\n", 4294967295);
+	ft_printf("22  |%o|\n", 40);
+	ft_printf("23  |%%#08x|\n", 42);
+	ft_printf("24  |%x|\n", 1000);
+	ft_printf("25  |%#X|\n", 1000);
+	ft_printf("26  |%s|\n", NULL);
+	ft_printf("27  |%S|\n", L"ݗݜशব");
+	ft_printf("28  |%s%s|\n", "test", "test");
+	ft_printf("29  |%s%s%s|\n", "test", "test", "test");
+	ft_printf("30  |%C|\n", 15000);
 	return (0);
 }
  
