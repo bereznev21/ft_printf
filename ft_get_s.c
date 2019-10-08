@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:10:53 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 21:14:35 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 22:16:58 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ char	*ft_get_s(char *str1, t_var *tmp, va_list str)
 	if (!str1)
 		str1 = ft_strdup("(null)");
 	else
-		str1 = ft_strjoin("", str1);
+		str1 = ft_strjoin_left("", str1);
 	return (str1);
 }
