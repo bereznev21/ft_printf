@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:17:18 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 22:14:52 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 22:43:59 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,17 @@ int precision, t_var *var_struct)
 	return (tmp);
 }
 
+char			*ft_join_all(t_float_struct tmp, t_var *var_struct)
+{
+	char	*str;
+
+	str = ft_strdup("");
+	tmp.res = ft_strjoin_left(str,
+	ft_itoa_base((intmax_t)tmp.num, 10, var_struct));
+	free(str);
+	return (tmp.res);
+}
+
 char			*ft_start_double(long double n, t_var *var_struct)
 {
 	t_float_struct	tmp;
@@ -83,7 +94,7 @@ char			*ft_start_double(long double n, t_var *var_struct)
 	if (!(var_struct->precision == 0 && var_struct->precision_flag == 1))
 		precision = (var_struct->precision == 0) ? 6 : var_struct->precision;
 	tmp = ft_create_double(n, precision, var_struct);
-	tmp.res = ft_itoa_base((intmax_t)tmp.num, 10, var_struct);
+	tmp.res = ft_join_all(tmp, var_struct);
 	if (!(var_struct->precision == 0 && var_struct->precision_flag == 1))
 	{
 		tmp.res = ft_strjoin_right(tmp.res, ".");

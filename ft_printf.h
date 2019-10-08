@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 22:47:02 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/07 15:59:10 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 23:03:52 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void				ft_if_ngtv_rgsgn_prcsn_1(t_var *tmp);
 void				ft_if_pstv_rgsgn_prcsn_0(t_var *tmp);
 void				ft_if_pstv_rgsgn_prcsn_1(t_var *tmp);
 void				ft_if_pstv_rgsgn(t_var *tmp);
+void				ft_print_d_flg_s_ask(t_var *tmp);
+void				ft_print_d_rgsgn4(t_var *tmp);
 void				ft_print_o(t_var *s);
 void				ft_print_u(t_var *s);
 void				ft_print_x(t_var *s);
