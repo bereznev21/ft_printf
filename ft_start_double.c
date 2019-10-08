@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 17:17:18 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 21:46:48 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/08 22:14:52 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,9 @@ char			*ft_start_double(long double n, t_var *var_struct)
 {
 	t_float_struct	tmp;
 	int				precision;
-	int				len;
-	char			*str;
 
-	len = 0;
 	var_struct->arg_sign = (n < 0) ? -1 : 1;
 	n = (n < 0) ? -n : n;
-	precision = 0;
 	if (!(var_struct->precision == 0 && var_struct->precision_flag == 1))
 		precision = (var_struct->precision == 0) ? 6 : var_struct->precision;
 	tmp = ft_create_double(n, precision, var_struct);
@@ -98,9 +94,8 @@ char			*ft_start_double(long double n, t_var *var_struct)
 		}
 		if ((long long int)tmp.mantisa > 0)
 		{
-			str = ft_ullitoa((uintmax_t)tmp.mantisa, var_struct);
-			tmp.res = ft_strjoin_right(tmp.res, str);
-			free(str);
+			tmp.res = ft_strjoin_right(tmp.res,
+			ft_ullitoa((uintmax_t)tmp.mantisa, var_struct));
 		}
 	}
 	return (tmp.res);
