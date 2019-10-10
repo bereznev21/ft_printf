@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:30:58 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 20:43:13 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/09 15:51:15 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	*ft_crop_str(char *str, int len, int crop)
 		tmp = ft_strnew(crop);
 		tmp = ft_strncpy(tmp, str, crop);
 	}
+	free(str);
 	str = tmp;
 	return (str);
 }
@@ -57,7 +58,10 @@ void	ft_print_s(t_var *s)
 
 	wdth = (s->width > 0) ? s->width : 0;
 	if (s->precision == 0 && s->precision_flag == 1 && s->type == 's')
+	{
+		free(s->data);
 		s->data = ft_strdup("");
+	}
 	len = ft_strlen(s->data);
 	len = (s->arg_sign == -1 || s->flag2 == '+') ? len-- : len;
 	s->precision = (s->precision >= len) ? 0 : s->precision;

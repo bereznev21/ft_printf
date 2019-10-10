@@ -6,7 +6,7 @@
 /*   By: rpoetess <rpoetess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 16:10:55 by rpoetess          #+#    #+#             */
-/*   Updated: 2019/10/08 19:42:34 by rpoetess         ###   ########.fr       */
+/*   Updated: 2019/10/09 16:01:57 by rpoetess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,10 @@
 
 int	ft_write(t_var *tmp)
 {
-	int	i;
 	int	len;
 
-	len = 0;
-	i = 0;
-	while (tmp->data[i] != '\0')
-	{
-		ft_putchar(tmp->data[i++]);
-		len++;
-	}
+	len = ft_strlen(tmp->data);
+	write(1, tmp->data, len);
 	free(tmp->data);
 	free(tmp);
 	return (len);
